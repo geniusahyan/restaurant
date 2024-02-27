@@ -19,3 +19,8 @@ body::-webkit-scrollbar {
   body{
     overflow-x: hidden;
   }
+
+  .services svg{
+    height: 6rem;
+    width: 6rem;
+  }

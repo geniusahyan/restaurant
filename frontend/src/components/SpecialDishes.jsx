@@ -5,13 +5,13 @@ import Slider from "react-slick";
 import Card from './Card';
 import { ArrowCircleLeft, ArrowCircleRight } from '@mui/icons-material';
 
-    const simpleNextArrow = (props)=>{
+    const SimpleNextArrow = (props)=>{
         const {className, style, onClick} = props;
         return (
             <div className={className} style={{...style, display:"block"} } onClick={onClick}></div>
         )
     }
-    const simplePrevArrow = (props)=>{
+    const SimplePrevArrow = (props)=>{
         const {className, style, onClick} = props;
         return (
             <div className={className} style={{...style, display:"block"} } onClick={onClick}></div>
@@ -56,8 +56,8 @@ const SpecialDishes = () => {
             }
           }
         ],
-        nextArrow: <simpleNextArrow />,
-        prevArrow: <simplePrevArrow />
+        nextArrow: <SimpleNextArrow />,
+        prevArrow: <SimplePrevArrow />
       };
 
       const slide = [1,2,3,4,5,6,7,8];

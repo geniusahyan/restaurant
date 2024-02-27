@@ -7,7 +7,7 @@ const Testimonials = () => {
     <div>
         <div className='flex flex-col md:flex-row px-4 items-center justify-between gap-12 ' >
             <div className="md:w-1/2">
-                <img src={testimonial} alt="" className='h-[30rem]' />
+                <img src={testimonial} alt="" className='h-[30rem] rounded-md' />
             </div>
             <div className="md:w-1/2 px-2 ">
                 <div className='text-left md:w-4/5 ' >
