@@ -23,8 +23,6 @@ const Categories = () => {
                             <div className="card-body h-28 ">
                                 <h2 className="card-title">{item.title}</h2>
                                 <p>{item.desc}</p>
-                                <div className="card-actions justify-end">
-                                </div>
                             </div>
                         </div>
                     )

@@ -34,7 +34,7 @@ const Banner = () => {
                 <p className='text-xl text-[#4a4a4a]' >Where Each Plate Weave a Story of Culinary Mastery and Passionate Craftsmanship</p>
                 <button className='btn bg-green px-3 !h-4 font-semibold text-white rounded-full ' >Order Now</button>
             </div>
-            <div className="right md:w-1/2 ">
+            <div className="right md:w-1/2 lg:ml-6 ">
                 <img src={banner} alt="banner" className='w-[27rem]' />
                 <div className='flex gap-3 -mt-12' >
                     <div className="mx-auto lg:mx-0 ">
