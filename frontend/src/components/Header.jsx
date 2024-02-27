@@ -1,9 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Logo from '/Logo.png';
-import { AddIcCall, MenuOpen, Search, ShoppingCartOutlined } from '@mui/icons-material';
+import { AddIcCall, DarkMode, LightMode, MenuOpen, Search, ShoppingCartOutlined } from '@mui/icons-material';
 
 const Header = () => {
-  const ServicesRef = useRef('');
+
+  const [dark, setdark] = useState(false);
+  useEffect(() =>{
+    document.body.dataset.theme = dark? "dark" : "light";
+    dark? 
+    document.body.classList.add('dark') :
+    document.body.classList.remove('dark');
+  },[dark])
+  
+
   const [open, setopen] = useState(false);
   const [serviceOpen, setServiceOpen] = useState(false);
   const handleMenuHover = ()=>{
@@ -17,6 +26,9 @@ const Header = () => {
   }
   const handleServiceLeave = ()=>{
     setServiceOpen(false)
+  }
+  const themeHandle = ()=>{
+    setdark(!dark)
   }
 
   const [sticky, setsticky] = useState(false);
@@ -121,6 +133,11 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
+        <button onClick={themeHandle} className="btn btn-ghost btn-circle  ">
+          {
+            dark ? <LightMode /> : <DarkMode />
+          }
+        </button>
         <button className="btn btn-ghost btn-circle hidden lg:flex  ">
           <Search />
         </button>

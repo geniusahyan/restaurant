@@ -72,11 +72,11 @@ const SpecialDishes = () => {
         
        
 
-        <div className='flex items-center px-1' >
+        <div className='flex items-center px-1  ' >
             <button className='rounded-full hidden lg:flex bg-red p-1' onClick={()=>slider.current?.slickPrev()} >
                 <ArrowCircleLeft />
             </button>
-            <Slider ref={slider} {...settings} className='px-1 flex gap-3 overflow-hidden  ' >
+            <Slider ref={slider} {...settings} className='px-1 h-[25rem] flex gap-3 overflow-hidden  ' >
                 {
                     slide.map((item, index)=>{
                         return (
