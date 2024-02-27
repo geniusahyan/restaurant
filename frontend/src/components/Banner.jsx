@@ -28,7 +28,7 @@ const Banner = () => {
 
   return (
     <div className=' max-w-screen-2xl container mx-auto xl:px-24 px-4 bg-gradient-to-r from-base-300 from-0% to-base-50 to-100% '>
-        <div className="py-16 flex flex-col md:flex-row flex-col-reverse justify-between items-center gap-8 ">
+        <div className="py-16 flex md:flex-row flex-col-reverse justify-between items-center gap-8 ">
             <div className="left md:w-1/2 space-y-7 px-4  ">
                 <h2 className='md:text-5xl text-4xl font-bold md:leading-snug ' >Dive into Delights of Delectable <span className='text-green' >Food</span></h2>
                 <p className='text-xl text-[#4a4a4a]' >Where Each Plate Weave a Story of Culinary Mastery and Passionate Craftsmanship</p>

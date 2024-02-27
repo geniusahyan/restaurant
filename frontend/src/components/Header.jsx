@@ -22,7 +22,7 @@ const Header = () => {
   const [sticky, setsticky] = useState(false);
   useEffect(()=>{
     window.addEventListener('scroll', ()=>{
-      if(window.scrollY > 100){
+      if(window.scrollY > 10){
         setsticky(true)
       }
       else{
@@ -76,7 +76,7 @@ const Header = () => {
   
 
   return (
-    <header className='max-w-screen-2xl container mx-auto fixed left-0 top-0 right-0 transition-all duration-100 '>
+    <header className='max-w-screen-2xl z-[1000] container mx-auto fixed left-0 top-0 right-0 transition-all duration-100 '>
       <div className={` ${sticky && 'shadow-md '} navbar bg-base-300 xl:px-24 transition-all duration-100 `} >
         <div className="navbar-start">
           <div className="dropdown">
