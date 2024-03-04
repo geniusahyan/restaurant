@@ -1,5 +1,6 @@
 import React from 'react'
 import Food from '/food2.jpg';
+import Card from './Card';
 
 const Categories = () => {
     const  categories = [
@@ -18,13 +19,7 @@ const Categories = () => {
             {
                 categories.map((item, index)=>{
                     return (
-                        <div key={index} className="card hover:-translate-y-4 transition-all duration-300 w-60 h-80 mx-auto bg-base-100 shadow-xl">
-                            <figure><img src={item.src}alt="Shoes" /></figure>
-                            <div className="card-body h-28 ">
-                                <h2 className="card-title">{item.title}</h2>
-                                <p>{item.desc}</p>
-                            </div>
-                        </div>
+                        <Card title={item.title} desc={item.desc} />
                     )
                 })
             }

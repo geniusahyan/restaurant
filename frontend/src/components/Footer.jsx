@@ -29,7 +29,7 @@ const Footer = () => {
       <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
         <aside className="items-center grid-flow-col">
           <Tag className='' />
-          <p>Restaurant Ahyan <br/>Providing food since 2026</p>
+          <p>Restaurant Ahyan <br/>Providing food by 2028</p>
         </aside> 
         <nav className="md:place-self-center md:justify-self-end">
           <div className="grid grid-flow-col gap-4">

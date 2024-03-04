@@ -48,7 +48,7 @@ const Header = () => {
               <details open={open} >
                 <summary>Menu</summary>
                 <ul className="p-3 -mt-10 text-center w-40 " onMouseLeave={handleMenuLeave} >
-                  <li><a>All</a></li>
+                  <li><a href='/menu' >All</a></li>
                   <li><a>Salad</a></li>
                   <li><a>Pizza</a></li>
                 </ul>
@@ -96,11 +96,11 @@ const Header = () => {
               <MenuOpen />
             </div>
             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-              <li><a>Home</a></li>
+              <li><a href='/menu' >Home</a></li>
               <li >
                 <a>Menu</a>
                 <ul className="p-2">
-                  <li><a>All</a></li>
+                  <li><a href='/menu' >All</a></li>
                   <li><a>Salad</a></li>
                   <li><a>Pizza</a></li>
                 </ul>
@@ -122,7 +122,7 @@ const Header = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li><a>Home</a></li>
+            <li><a href='/' >Home</a></li>
             <li onMouseEnter={handleMenuHover}  >
               {MenuButton}
             </li>
