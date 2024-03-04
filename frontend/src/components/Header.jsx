@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Logo from '/Logo.png';
 import { AddIcCall, DarkMode, LightMode, MenuOpen, Search, ShoppingCartOutlined } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
@@ -48,9 +49,9 @@ const Header = () => {
               <details open={open} >
                 <summary>Menu</summary>
                 <ul className="p-3 -mt-10 text-center w-40 " onMouseLeave={handleMenuLeave} >
-                  <li><a href='/menu' >All</a></li>
-                  <li><a>Salad</a></li>
-                  <li><a>Pizza</a></li>
+                  <li><Link to='/menu' >All</Link></li>
+                  <li><Link>Salad</Link></li>
+                  <li><Link>Pizza</Link></li>
                 </ul>
               </details>
   )
@@ -59,9 +60,10 @@ const Header = () => {
             <details open={serviceOpen} >
               <summary>Services</summary>
               <ul className="p-3 text-center w-40 " onMouseLeave={handleServiceLeave} >
-                <li><a>Online Order</a></li>
-                <li><a>Table Booking</a></li>
-                <li><a>Order Tracking</a></li>
+                <li><Link>Online Order</Link></li>
+                <li><Link>Table Booking</Link></li>
+                <li><Link>Order Tracking</Link></li>
+                
               </ul>
             </details>
   )
@@ -96,40 +98,40 @@ const Header = () => {
               <MenuOpen />
             </div>
             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-              <li><a href='/menu' >Home</a></li>
+              <li><Link to='/menu' >Home</Link></li>
               <li >
-                <a>Menu</a>
+                <Link>Menu</Link>
                 <ul className="p-2">
-                  <li><a href='/menu' >All</a></li>
-                  <li><a>Salad</a></li>
-                  <li><a>Pizza</a></li>
+                  <li><Link to='/menu' >All</Link></li>
+                  <li><Link>Salad</Link></li>
+                  <li><Link>Pizza</Link></li>
                 </ul>
               </li>
               <li>
-                <a>Services</a>
+                <Link>Services</Link>
                 <ul className="p-2">
-                  <li><a>Online Order</a></li>
-                  <li><a>Table Booking</a></li>
-                  <li><a>Order traking</a></li>
+                  <li><Link>Online Order</Link></li>
+                  <li><Link>Table Booking</Link></li>
+                  <li><Link>Order traking</Link></li>
                 </ul>
               </li>
-              <li><a>Offers</a></li>
+              <li><Link>Offers</Link></li>
             </ul>
           </div>
-          <a>
+          <Link>
             <img src={Logo} alt="logo" className='w-20' />
-          </a>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li><a href='/' >Home</a></li>
+            <li><Link to='/' >Home</Link></li>
             <li onMouseEnter={handleMenuHover}  >
               {MenuButton}
             </li>
             <li onMouseEnter={handleServiceHover} >
               {ServiceButton}
             </li>
-            <li><a>Offers</a></li>
+            <li><Link>Offers</Link></li>
           </ul>
         </div>
         <div className="navbar-end">
@@ -142,10 +144,10 @@ const Header = () => {
           <Search />
         </button>
           {CartButton}
-          <a href="" className='btn bg-green rounded-full px-5 text-white flex items-center gap-2' >
+          <Link to="" className='btn bg-green rounded-full px-5 text-white flex items-center gap-2' >
             <AddIcCall />
             Contact
-          </a>
+          </Link>
         </div>
       </div>
     </header>

@@ -20,10 +20,10 @@ const Card = ({title="title", desc="desc", price="price"}) => {
         </div>
         <figure><img className='rounded-full hover:scale-105 transition-all mx-3 duration-300 w-[12rem] h-[12rem]  ' src={Food} alt="Shoes" /></figure>
         <div className="card-body h-28 ">
-            <h2 className="card-title">{title}</h2>
+            <h2 className="card-title text-nowrap ">{title}</h2>
             <p>{desc}</p>
-            <div className="card-actions justify-between ">
-                <p className='font-bold text-sm' ><span className='text-red' >$</span>{price} </p>
+            <div className="card-actions z-[1] justify-between ">
+                <p className='font-bold text-sm z-[1]' ><span className='text-red' >$</span>{price} </p>
                 <span>
                     <Stars />
                     <span className='text-sm' >4.5</span>
