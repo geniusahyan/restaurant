@@ -19,7 +19,7 @@ const Categories = () => {
             {
                 categories.map((item, index)=>{
                     return (
-                        <Card title={item.title} desc={item.desc} />
+                        <Card key={index} title={item.title} desc={item.desc} />
                     )
                 })
             }

@@ -80,7 +80,7 @@ const SpecialDishes = () => {
                 {
                     slide.map((item, index)=>{
                         return (
-                            <Card title={'item'} />
+                            <Card key={index} title={'item'} />
                         )
                     })
                 }

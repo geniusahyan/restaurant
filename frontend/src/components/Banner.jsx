@@ -15,8 +15,8 @@ const Banner = () => {
     )
 
     const  FoodExample = (
-        <div class="p-2 flex h-24 gap-2  bg-base-100 rounded-xl shadow-lg space-y-2 w-[14rem] ">
-            <img class=" h-20 w-20 rounded-2xl" src={food1} alt="food1" />
+        <div className="p-2 flex h-24 gap-2  bg-base-100 rounded-xl shadow-lg space-y-2 w-[14rem] ">
+            <img className=" h-20 w-20 rounded-2xl" src={food1} alt="food1" />
             <div className="text-sm space-y-1 ">
                 <h5 className='font-bold text-[0.8rem]' >chicken something</h5>
                 {Rating}

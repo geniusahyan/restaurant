@@ -2,8 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import Logo from '/Logo.png';
 import { AddIcCall, DarkMode, LightMode, MenuOpen, Search, ShoppingCartOutlined } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+import Profile from './Profile';
 
-const Header = () => {
+const Header = ({login}) => {
 
   const [dark, setdark] = useState(false);
   useEffect(() =>{
@@ -140,14 +141,20 @@ const Header = () => {
             dark ? <LightMode /> : <DarkMode />
           }
         </button>
+
         <button className="btn btn-ghost btn-circle hidden lg:flex  ">
           <Search />
         </button>
-          {CartButton}
-          <Link to="" className='btn bg-green rounded-full px-5 text-white flex items-center gap-2' >
+
+        {CartButton}
+
+        <Link to="" className='btn bg-green rounded-full px-5 text-white flex items-center gap-2' >
             <AddIcCall />
             Contact
           </Link>
+
+          <Profile />
+         
         </div>
       </div>
     </header>
