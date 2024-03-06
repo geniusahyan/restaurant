@@ -15,11 +15,19 @@ export const addUser = async (req, res)=>{
     }
 }
 
-export const getUser = async (req,res)=>{
+export const getUser = async (req, res) => {
     try {
-        const users = await user.find({});
-        return res.status(200).json(users);
+      const foundUser = await user.findOne({
+        email: req.body.email,
+        password: req.body.password,
+      });
+  
+      if (foundUser) {
+        return res.status(200).json(foundUser);
+      } else {
+        return res.status(401).json({ message: 'Invalid credentials' });
+      }
     } catch (error) {
-        return res.status(500).json(error);
+      return res.status(500).json({ message: 'Internal server error', error });
     }
-}
+  };

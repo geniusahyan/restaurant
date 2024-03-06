@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Card from '../Card';
-
     
 
 const Menu = () => {
@@ -120,7 +119,7 @@ const Menu = () => {
             {
                 currentItems.map((item, index) => {
                     return (
-                        <Card key={index} price={item.price} title={item.name} desc={item.category} />
+                        <Card key={index} price={item.price} image={item.image} title={item.name} desc={item.category} />
                     )
                 })
             }

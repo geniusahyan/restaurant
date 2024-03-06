@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import validator from 'validator';
 import { connect } from 'react-redux';
 import { login, logout } from '../features/AuthSlice';
 import Background from '/background.jpg';
-import { addUser } from '../api/route';
+import { addUser, getUser } from '../api/route';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = ({islogin, login, logout}) => {
+
+  const notify = (message) => toast(message);
   
   const [username, setUsername] = useState('')
   const [email, setemail] = useState('');
@@ -33,12 +36,15 @@ const Login = ({islogin, login, logout}) => {
   }
   const handleLoginSubmit = async (e)=>{
     e.preventDefault();
-    
+    const user = await getUser({email,password})
     setemail('');
     setPassword('');
-    setUsername('');
-    localStorage.setItem('loginEmail', email);
-    login() ;
+    if (user != undefined) {
+      localStorage.setItem('loginEmail', email);
+      login() ;
+    }else{
+      notify("Invalid email or password")
+    }
   }
   const handleSignSubmit = async (e)=>{
     e.preventDefault();
@@ -136,6 +142,7 @@ const loginpage = (
         {
           LogSign ? loginpage : signinpage 
         }
+        <ToastContainer />
     </div>
   )
 }

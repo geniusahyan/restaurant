@@ -9,6 +9,15 @@ export const addUser = async (data)=>{
     }
 }
 
+export const getUser = async (data)=>{
+    try {
+        const users = await axios.post(`${url}/getuser`, data);
+        return users;
+    } catch (error) {
+        console.log("data fetching error", error);
+    }
+}
+
 export const sendContact = async (data)=>{
     try {
         await axios.post(`${url}/contact`,data);

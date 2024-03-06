@@ -3,7 +3,7 @@ import Food from '/food2.jpg';
 import { Favorite, FavoriteBorder, Stars } from '@mui/icons-material';
 
 
-const Card = ({title="title", desc="desc", price="price"}) => {
+const Card = ({title="title", desc="desc", price="price", image={Food}}) => {
 
     const [isFavorite, setIsFavorite] = useState(false);
     const handleFavoriteClick = ()=>{
@@ -18,7 +18,7 @@ const Card = ({title="title", desc="desc", price="price"}) => {
                 }
             </div>
         </div>
-        <figure><img className='rounded-full hover:scale-105 transition-all mx-3 duration-300 w-[12rem] h-[12rem]  ' src={Food} alt="Shoes" /></figure>
+        <figure><img className='rounded-full hover:scale-105 transition-all mx-3 duration-300 w-[12rem] h-[12rem]  ' src={image} alt="Shoes" /></figure>
         <div className="card-body h-28 ">
             <h2 className="card-title text-nowrap ">{title}</h2>
             <p>{desc}</p>
