@@ -25,3 +25,13 @@ export const sendContact = async (data)=>{
         console.log("data fetching error", error);
     }
 }
+
+export const getMenu = async (data)=>{
+    // data from database
+    try {
+        const  menuList = await axios.get(`${url}/menu`);
+        return menuList.data;
+    } catch (error) {
+        console.log("data fetching error", error);
+    }
+}

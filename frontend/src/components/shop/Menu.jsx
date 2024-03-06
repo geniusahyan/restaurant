@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Card from '../Card';
+import { getMenu } from '../../api/route';
     
 
 const Menu = () => {
@@ -13,8 +14,7 @@ const Menu = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch('/Food-menu.json');
-            const data = await response.json();
+            const data = await getMenu();
             setmenu(data);
             setfilter(data);
         }
