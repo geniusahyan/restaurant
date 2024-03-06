@@ -66,7 +66,7 @@ const Login = ({islogin, login, logout}) => {
             value={username}
             onChange={handleUsernameChange}
             placeholder="Enter Your Username" 
-            className="input input-bordered h-16 text-xl text-white bg-transparent input-info mx-5" />
+            className="input input-bordered h-16 text-xl text-white bg-transparent input-info mx-5" required />
 
             <input 
             type="email" 
@@ -75,7 +75,7 @@ const Login = ({islogin, login, logout}) => {
             value={email}
             onChange={handleEmailChange}
             placeholder="Email Address" 
-            className="input input-bordered h-16 text-xl text-white bg-transparent input-info mx-5" />
+            className="input input-bordered h-16 text-xl text-white bg-transparent input-info mx-5" required/>
 
           {/* password */}
             <input 
@@ -85,7 +85,7 @@ const Login = ({islogin, login, logout}) => {
             value={password}
             id="password" 
             placeholder="Enter Your Password" 
-            className="input  h-16 input-bordered input-info mx-5 text-xl bg-transparent" />
+            className="input  h-16 input-bordered input-info mx-5 text-xl bg-transparent" required/>
 
             <button type='submit' className='btn bg-blue-200 w-[12rem] border-none text-xl hover:bg-blue-400 mx-auto ' > Create </button>
         </form>

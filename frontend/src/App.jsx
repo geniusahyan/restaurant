@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import { connect } from 'react-redux';
 import Login from './components/Login';
 import Cart from './components/Cart'
+import Contact from './components/Contact';
 
 
 
@@ -26,6 +27,7 @@ const App = ({ islogin }) => {
               <Route path='/' element={<Home />} />
               <Route path='/menu' element={<Menu />} />
               <Route path='/cart' element={<Cart /> } />
+              <Route path='/contact' element={<Contact /> } />
             </Routes>
             <Footer />
           </BrowserRouter>

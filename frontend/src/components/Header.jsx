@@ -148,7 +148,7 @@ const Header = ({login}) => {
 
         {CartButton}
 
-        <Link to="" className='btn hidden lg:flex  bg-green rounded-full px-5 text-white items-center gap-2' >
+        <Link to="/contact" className='btn hidden lg:flex  bg-green rounded-full px-5 text-white items-center gap-2' >
             <AddIcCall />
             Contact
           </Link>
