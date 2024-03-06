@@ -3,7 +3,7 @@ import { Instagram, LinkedIn, Tag, Twitter, YouTube } from '@mui/icons-material'
 
 const Footer = () => {
   return (
-    <div>
+    <>
       <footer className="footer p-10 bg-base-200 text-base-content">
         <nav>
           <h6 className="footer-title">Services</h6> 
@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
         </nav>
       </footer>
-    </div>
+    </>
   )
 }
 

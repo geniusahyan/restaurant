@@ -82,7 +82,7 @@ const Header = ({login}) => {
           <span className="font-bold text-lg">8 Items</span>
           <span className="text-info">Subtotal: $999</span>
           <div className="card-actions">
-            <button className="btn btn-primary btn-block">View cart</button>
+            <Link to={"/cart"} className="btn btn-primary btn-block">View cart</Link>
           </div>
         </div>
       </div>
@@ -148,7 +148,7 @@ const Header = ({login}) => {
 
         {CartButton}
 
-        <Link to="" className='btn bg-green rounded-full px-5 text-white flex items-center gap-2' >
+        <Link to="" className='btn hidden lg:flex  bg-green rounded-full px-5 text-white items-center gap-2' >
             <AddIcCall />
             Contact
           </Link>

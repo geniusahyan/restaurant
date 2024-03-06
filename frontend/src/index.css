@@ -28,3 +28,6 @@ body::-webkit-scrollbar {
   .options option{
     font-size: 1.3rem;
   }
+  .smooth-move {
+    @apply w-20 h-20 bg-blue-500 absolute transition-transform duration-200 ease-out;
+  }

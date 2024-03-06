@@ -6,24 +6,30 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import { connect } from 'react-redux';
 import Login from './components/Login';
+import Cart from './components/Cart'
+
+
 
 const App = ({ islogin }) => {
-
+  const [loading, setloading] = useState(false);
 
   return (
     <>
-      {!islogin ? (
-        <Login />
-      ) : (
-        <BrowserRouter>
-          <Header login={islogin} />
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/menu' element={<Menu />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      )}
+      {
+        loading  ? loadingSpin :
+        !islogin ? (
+          <Login />
+        ) : (
+          <BrowserRouter>
+            <Header login={islogin} />
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/menu' element={<Menu />} />
+              <Route path='/cart' element={<Cart /> } />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        )}
     </>
   );
 };

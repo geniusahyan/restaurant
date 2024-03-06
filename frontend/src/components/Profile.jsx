@@ -19,16 +19,10 @@ const Profile = () => {
                 <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
                 <ul className="menu text-xl p-6 w-80 min-h-full bg-base-200 text-base-content">
                 {/* Sidebar content here */}
-                <li><a>Sidebar Item 1</a></li>
-                <li><a>Sidebar Item 2</a></li>
-                <li><a>Sidebar Item 1</a></li>
-                <li><a>Sidebar Item 2</a></li>
-                <li><a>Sidebar Item 1</a></li>
-                <li><a>Sidebar Item 2</a></li>
-                <li><a>Sidebar Item 1</a></li>
-                <li><a>Sidebar Item 2</a></li>
-                <li><a>Sidebar Item 1</a></li>
-                <li><a>Sidebar Item 2</a></li>
+                <li><a>Profile</a></li>
+                <li><a>Settings</a></li>
+                <li><a>My Orders</a></li>
+                <li><a>Logout</a></li>
                 </ul>
             </div>
         </div>

@@ -16,8 +16,10 @@ const Login = ({islogin, login, logout}) => {
   useEffect(()=>{
     if (localLogin) {
       login();
-    } 
-  },[])
+    }else{
+      logout();
+    }
+  },[localLogin])
 
   const handlePassChange = (data)=>{
     setPassword(data.target.value);
@@ -43,7 +45,6 @@ const Login = ({islogin, login, logout}) => {
     setPassword('');
     setUsername('');
     localStorage.setItem('loginEmail', email);
-    // location.reload();
   }
 
 
