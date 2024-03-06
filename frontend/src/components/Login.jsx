@@ -3,6 +3,7 @@ import validator from 'validator';
 import { connect } from 'react-redux';
 import { login, logout } from '../features/AuthSlice';
 import Background from '/background.jpg';
+import { addUser } from '../api/route';
 
 
 const Login = ({islogin, login, logout}) => {
@@ -30,16 +31,18 @@ const Login = ({islogin, login, logout}) => {
   const handleEmailChange = (data)=>{
     setemail(data.target.value);
   }
-  const handleLoginSubmit = (e)=>{
+  const handleLoginSubmit = async (e)=>{
     e.preventDefault();
+    
     setemail('');
     setPassword('');
     setUsername('');
     localStorage.setItem('loginEmail', email);
     login() ;
   }
-  const handleSignSubmit = (e)=>{
+  const handleSignSubmit = async (e)=>{
     e.preventDefault();
+    await addUser({username, email, password})
     console.log(username, email, password)
     setemail('');
     setPassword('');
