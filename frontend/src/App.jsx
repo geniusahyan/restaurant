@@ -8,16 +8,15 @@ import { connect } from 'react-redux';
 import Login from './components/Login';
 import Cart from './components/Cart'
 import Contact from './components/Contact';
+import ErrorPage from './components/ErrorPage';
 
 
 
 const App = ({ islogin }) => {
-  const [loading, setloading] = useState(false);
 
   return (
-    <>
+    <div>
       {
-        loading  ? loadingSpin :
         !islogin ? (
           <Login />
         ) : (
@@ -28,11 +27,12 @@ const App = ({ islogin }) => {
               <Route path='/menu' element={<Menu />} />
               <Route path='/cart' element={<Cart /> } />
               <Route path='/contact' element={<Contact /> } />
+              <Route path='*' element={<ErrorPage /> } />
             </Routes>
             <Footer />
           </BrowserRouter>
         )}
-    </>
+    </div>
   );
 };
 

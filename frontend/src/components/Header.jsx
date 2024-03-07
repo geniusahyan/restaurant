@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Logo from '/Logo.png';
 import { AddIcCall, DarkMode, LightMode, MenuOpen, Search, ShoppingCartOutlined } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Profile from './Profile';
 
 const Header = ({login}) => {
@@ -47,10 +47,10 @@ const Header = ({login}) => {
   
 
   const MenuButton = (
-              <details open={open} >
+              <details activeclassname="active" to='/menu' open={open} >
                 <summary>Menu</summary>
                 <ul className="p-3 -mt-10 text-center w-40 " onMouseLeave={handleMenuLeave} >
-                  <li><Link to='/menu' >All</Link></li>
+                  <li><NavLink activeclassname="active" to='/menu' >All</NavLink></li>
                   <li><Link>Salad</Link></li>
                   <li><Link>Pizza</Link></li>
                 </ul>
@@ -61,7 +61,7 @@ const Header = ({login}) => {
             <details open={serviceOpen} >
               <summary>Services</summary>
               <ul className="p-3 text-center w-40 " onMouseLeave={handleServiceLeave} >
-                <li><Link>Online Order</Link></li>
+                <li><NavLink activeclassname="active" >Online Order</NavLink></li>
                 <li><Link>Table Booking</Link></li>
                 <li><Link>Order Tracking</Link></li>
                 
@@ -101,7 +101,7 @@ const Header = ({login}) => {
             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
               <li><Link to='/menu' >Home</Link></li>
               <li >
-                <Link>Menu</Link>
+                <Link className='bg-red' >Menu</Link>
                 <ul className="p-2">
                   <li><Link to='/menu' >All</Link></li>
                   <li><Link>Salad</Link></li>
@@ -119,13 +119,13 @@ const Header = ({login}) => {
               <li><Link>Offers</Link></li>
             </ul>
           </div>
-          <Link>
+          <Link to='/' >
             <img src={Logo} alt="logo" className='w-20' />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li><Link to='/' >Home</Link></li>
+            <li><NavLink activeclassname="active" to='/' >Home</NavLink></li>
             <li onMouseEnter={handleMenuHover}  >
               {MenuButton}
             </li>
@@ -135,7 +135,7 @@ const Header = ({login}) => {
             <li><Link>Offers</Link></li>
           </ul>
         </div>
-        <div className="navbar-end">
+        <div className="navbar-end gap-x-2 ">
         <button onClick={themeHandle} className="btn btn-ghost btn-circle  ">
           {
             dark ? <LightMode /> : <DarkMode />
@@ -151,8 +151,7 @@ const Header = ({login}) => {
         <Link to="/contact" className='btn hidden lg:flex  bg-green rounded-full px-5 text-white items-center gap-2' >
             <AddIcCall />
             Contact
-          </Link>
-
+        </Link>
           <Profile />
          
         </div>

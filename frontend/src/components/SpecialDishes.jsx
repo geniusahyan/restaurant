@@ -68,8 +68,7 @@ const SpecialDishes = () => {
       useEffect(() => {
           const fetchData = async () => {
               const data = await getMenu();
-              let popular = data.filter((item)=>item.category == "popular");
-              let selectedData = popular.slice(0, 8);
+              let selectedData = data.slice(0, 8);
               setslide(selectedData);
           }
           fetchData();

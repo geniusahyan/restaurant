@@ -1,5 +1,5 @@
 import axios from 'axios';
-const url = 'http://localhost:3000';
+const url = import.meta.env.REACT_APP_API_URL;
 
 export const addUser = async (data)=>{
     try {
