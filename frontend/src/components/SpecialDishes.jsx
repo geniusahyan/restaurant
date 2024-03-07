@@ -1,8 +1,9 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Card from './Card';
+import { getMenu } from '../api/route';
 import { ArrowCircleLeft, ArrowCircleRight } from '@mui/icons-material';
 
     const SimpleNextArrow = (props)=>{
@@ -60,7 +61,19 @@ const SpecialDishes = () => {
         prevArrow: <SimplePrevArrow />
       };
 
-      const slide = [1,2,3,4,5,6,7,8];
+      // const slide = [1,2,3,4,5,6,7,8];
+
+      const [slide, setslide] = useState([1,2,3,4,5,6,7,8]);
+
+      useEffect(() => {
+          const fetchData = async () => {
+              const data = await getMenu();
+              let popular = data.filter((item)=>item.category == "popular");
+              let selectedData = popular.slice(0, 8);
+              setslide(selectedData);
+          }
+          fetchData();
+      }, [])
 
   return (
     <div className='section-container my-20 ' >
@@ -80,7 +93,7 @@ const SpecialDishes = () => {
                 {
                     slide.map((item, index)=>{
                         return (
-                            <Card key={index} title={'item'} />
+                            <Card key={index} title={item.name} image={item.image} price={item.price} desc={"Roasted griottine cherry sauce"} />
                         )
                     })
                 }

@@ -3,7 +3,6 @@ import menudata from "../model/menu.model.js";
 
 export const getMenu = async (req, res) => {
   try {
-    console.log('Connected to MongoDB:', mongoose.connection.name);
     const allMenuData = await menudata.find();
     return res.status(200).json(allMenuData);
   } catch (error) {

@@ -1,14 +1,19 @@
-import React from 'react'
-import Food from '/food2.jpg';
+import React, { useState, useEffect } from 'react'
 import Card from './Card';
+import { getMenu } from '../api/route';
 
 const Categories = () => {
-    const  categories = [
-        {id:1,title:"food", src:Food, desc: "this is best food i ever seen"},
-        {id:1,title:"food", src:Food, desc: "this is best food i ever seen"},
-        {id:1,title:"food", src:Food, desc: "this is best food i ever seen"},
-        {id:1,title:"food", src:Food, desc: "this is best food i ever seen"}
-    ]
+    const [categories, setcategories] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await getMenu();
+            let popular = data.filter((item)=>item.category == "popular");
+            let selectedData = popular.slice(0, 8);
+            setcategories(selectedData);
+        }
+        fetchData();
+    }, [])
   return (
     <div className='section-container py-16  ' >
         <div className='text-center ' >
@@ -19,7 +24,7 @@ const Categories = () => {
             {
                 categories.map((item, index)=>{
                     return (
-                        <Card key={index} title={item.title} desc={item.desc} />
+                        <Card price={item.price} key={index} title={item.name} image={item.image} desc={'Roasted griottine cherry sauce'} />
                     )
                 })
             }
